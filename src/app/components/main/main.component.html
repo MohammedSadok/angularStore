@@ -1,0 +1,27 @@
+<button (click)="getAllData()">Add</button>
+<button (click)="clean()">Clean</button>
+<button (click)="addOne(number)">Add</button>
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div>ID</div>
+      <div>Name</div>
+      <div>species</div>
+      <div>gender</div>
+      <div>created</div>
+      <div>status</div>
+      <div>img</div>
+    </li>
+    <div *ngFor="let item of result">
+      <li class="table-row">
+        <div>{{ item.id }}</div>
+        <div>{{ item.name }}</div>
+        <div>{{ item.species }}</div>
+        <div>{{ item.gender }}</div>
+        <div>{{ item.created }}</div>
+        <div>{{ item.status }}</div>
+        <div><img src="{{ item.image }}" /></div>
+      </li>
+    </div>
+  </ul>
+</div>
