@@ -18,6 +18,7 @@ export class MainComponent {
   }
   clean() {
     this.result = [];
+    this.number = 0;
   }
   addOne(number: number) {
     this.service.getOneData(number).subscribe((data: any) => {

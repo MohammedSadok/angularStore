@@ -1,6 +1,30 @@
-<ul>
+<!-- <ul>
   <li><a routerLinkActive="active" routerLink="home">Home</a></li>
-  <li><a routerLink="news" routerLinkActive="active">News</a></li>
-  <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+  <li><a routerLink="product" routerLinkActive="active">Product</a></li>
+
+
+  <li class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    </div>
+  </li>
+  <li></li>
   <li style="float:right" routerLinkActive="active"><a routerLink="about">About</a></li>
-</ul>
+</ul> -->
+
+
+<div class="navbar">
+  <a routerLinkActive="active" routerLink="home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn" routerLinkActive="active">Product
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a routerLink="product/list" routerLinkActive="active">List</a>
+      <a routerLink="product/add" routerLinkActive="active">Add</a>
+    </div>
+  </div>
+</div>
