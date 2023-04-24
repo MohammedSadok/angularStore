@@ -4,6 +4,7 @@
     <div class="field">
       <label class="label">Title</label>
       <input
+        [(ngModel)]="product.title"
         type="text"
         class="input"
         formControlName="title"
@@ -28,6 +29,7 @@
     <div class="field">
       <label class="label">Price</label>
       <input
+        [(ngModel)]="product.price"
         type="text"
         class="input"
         formControlName="price"
@@ -52,6 +54,7 @@
     <div class="field">
       <label class="label">Description</label>
       <textarea
+        [(ngModel)]="product.description"
         style="resize: none; height: 120px"
         class="input desc"
         formControlName="description"
@@ -76,6 +79,7 @@
     <div class="field">
       <label class="label">Image</label>
       <textarea
+        [(ngModel)]="product.image"
         type="text"
         class="input"
         formControlName="image"
@@ -99,9 +103,13 @@
     </div>
     <div class="field">
       <label class="label">Category</label>
-      <select formControlName="category" class="category">
-        <option *ngFor="let category of categories" [ngValue]="category.id">
-          {{ category.title }}
+      <select
+        formControlName="category"
+        class="category"
+        [(ngModel)]="product.category"
+      >
+        <option *ngFor="let category of categories" [ngValue]="category">
+          {{ category }}
         </option>
       </select>
       <span
