@@ -4,25 +4,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MainComponent } from './components/main/main.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './components/product/product.component';
-import { AboutComponent } from './components/about/about.component';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { RootLayaoutComponent } from './components/root-layaout/root-layaout.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { RootLayaoutComponent } from './pages/root-layaout/root-layaout.component';
+import { ProductModule } from './modules/product/product.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    MainComponent,
     HomeComponent,
     ProductComponent,
-    AboutComponent,
     ListComponent,
     AddComponent,
     ErrorPageComponent,
@@ -32,7 +30,10 @@ import { RootLayaoutComponent } from './components/root-layaout/root-layaout.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ProductModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

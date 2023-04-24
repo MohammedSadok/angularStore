@@ -1,1 +1,123 @@
-<p>add works!</p>
+<h1>Create new product</h1>
+<div class="container">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label class="label">Title</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="title"
+        [class.invalid]="
+          registerForm.get('title')?.invalid &&
+          (registerForm.get('title')?.dirty ||
+            registerForm.get('title')?.touched ||
+            isSubmitted)
+        "
+      />
+      <span
+        *ngIf="
+          registerForm.get('title')?.hasError('required') &&
+          (registerForm.get('title')?.dirty ||
+            registerForm.get('title')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+    </div>
+    <div class="field">
+      <label class="label">Price</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="price"
+        [class.invalid]="
+          registerForm.get('price')?.invalid &&
+          (registerForm.get('price')?.dirty ||
+            registerForm.get('price')?.touched ||
+            isSubmitted)
+        "
+      />
+      <span
+        *ngIf="
+          registerForm.get('price')?.hasError('required') &&
+          (registerForm.get('price')?.dirty ||
+            registerForm.get('price')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+    </div>
+    <div class="field">
+      <label class="label">Description</label>
+      <textarea
+        style="resize: none; height: 120px"
+        class="input desc"
+        formControlName="description"
+        [class.invalid]="
+          registerForm.get('description')?.invalid &&
+          (registerForm.get('description')?.dirty ||
+            registerForm.get('description')?.touched ||
+            isSubmitted)
+        "
+      ></textarea>
+      <span
+        *ngIf="
+          registerForm.get('description')?.hasError('required') &&
+          (registerForm.get('description')?.dirty ||
+            registerForm.get('description')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+    </div>
+    <div class="field">
+      <label class="label">Image</label>
+      <textarea
+        type="text"
+        class="input"
+        formControlName="image"
+        [class.invalid]="
+          registerForm.get('image')?.invalid &&
+          (registerForm.get('image')?.dirty ||
+            registerForm.get('image')?.touched ||
+            isSubmitted)
+        "
+      ></textarea>
+      <span
+        *ngIf="
+          registerForm.get('image')?.hasError('required') &&
+          (registerForm.get('image')?.dirty ||
+            registerForm.get('image')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+    </div>
+    <div class="field">
+      <label class="label">Category</label>
+      <select formControlName="category" class="category">
+        <option *ngFor="let category of categories" [ngValue]="category.id">
+          {{ category.title }}
+        </option>
+      </select>
+      <span
+        *ngIf="
+          registerForm.get('price')?.hasError('required') &&
+          (registerForm.get('price')?.dirty ||
+            registerForm.get('price')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+    </div>
+
+    <div>
+      <button type="submit" class="button">Save</button>
+    </div>
+  </form>
+</div>

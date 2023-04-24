@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { RootLayaoutComponent } from './components/root-layaout/root-layaout.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { RootLayaoutComponent } from './pages/root-layaout/root-layaout.component';
+// import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
-import { MainComponent } from './components/main/main.component';
+
 const routes: Routes = [
   {
     path: 'main',
     component: RootLayaoutComponent,
     children: [
-      { path: 'home', component: MainComponent },
-      { path: 'about', component: AboutComponent },
       {
         path: 'product',
         component: ProductComponent,
